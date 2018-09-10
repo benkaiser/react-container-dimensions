@@ -36,7 +36,9 @@ export default class ContainerDimensions extends Component {
 
   componentWillUnmount() {
     this.componentIsMounted = false
-    this.elementResizeDetector.uninstall(this.parentNode)
+    try {
+     this.elementResizeDetector.uninstall(this.parentNode)
+    } catch(error) {}
   }
 
   onResize() {
